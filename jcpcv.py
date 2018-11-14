@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import sys
 import cv2
 import numpy as np
 import pytesseract
@@ -122,6 +123,6 @@ def GetInformation(img):
 
 
 if __name__ == "__main__":
-    print(GetInformation(cv2.imread("Red PLC (1).jpg", 0)))
-    print(GetInformation(cv2.imread("Gold PLC (1).jpg", 0)))
-    print(GetInformation(cv2.imread("Red MasterCard (1).jpg", 0)))
+    if len(sys.argv) > 1:
+        image = sys.argv[1]
+        print(GetInformation(cv2.imread(image, 0)))
