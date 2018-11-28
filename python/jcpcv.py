@@ -83,7 +83,7 @@ def GetInformation(img):
     # draw(card_number_pic)
     card_number_pic = OtsuThreshold(card_number_pic)
     card_number_str = pytesseract.image_to_string(
-        card_number_pic, config='outputbase digits')
+        card_number_pic, config='--psm 10 --oem 3 -c tessedit_char_whitelist=0123456789')
 
     # identify its validity
     card_number_str, card_valid, card_type = validateCardNumber(

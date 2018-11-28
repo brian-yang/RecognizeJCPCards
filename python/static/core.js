@@ -23,6 +23,9 @@ function success(stream) {
     video.srcObject = stream;
 }
 
+videoWidth = 1280
+videoHeight = 960
+
 //异常的回调函数
 function error(error) {
     alert("访问用户媒体设备失败：", error.name, error.message);
@@ -32,10 +35,10 @@ if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.w
     getUserMedia({
         video: {
             width: {
-                exact: 640
+                exact: videoWidth
             },
             height: {
-                exact: 480
+                exact: videoHeight
             },
             facingMode: "environment"
 
@@ -46,4 +49,15 @@ if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.w
 }
 
 //注册拍照按钮的单击事件
-document.getElementById("capture").addEventListener("click", function () {});
+document.getElementById("capture").addEventListener("click", function () {
+	console.log("clicked");
+	// var canvas = document.createElement('canvas');
+	var canvas = 	document.getElementById("picture")
+	canvas.width = 640;
+	canvas.height = 404;
+	var ctx = canvas.getContext('2d');
+	ctx.drawImage(video, 160 * videoWidth / 640, 140 * videoWidth / 640, 320 * videoWidth / 640, 202 * videoWidth / 640, 0, 0, canvas.width, canvas.height);
+	var img = canvas.toDataURL("image/jpeg");
+	$.post("/", {"photo": img}, function(data) {console.log(data); alert(JSON.stringify(data)); });
+	
+});
