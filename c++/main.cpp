@@ -36,10 +36,6 @@ int main(int argc, char** argv)
     int inpHeight = parser.get<int>("height");
     std::string model = parser.get<std::string>("model");
 
-    std::cout << argv[1] << std::endl;
-    std::cout << model << std::endl;
-    std::cout << inpWidth << std::endl; 
-
     if (!parser.check())
     {
         parser.printErrors();
