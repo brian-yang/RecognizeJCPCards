@@ -82,6 +82,7 @@ def GetInformation(img):
     card_number_pic = dst[430:490, 50:600]
     # draw(card_number_pic)
     card_number_pic = OtsuThreshold(card_number_pic)
+    draw(card_number_pic)
     card_number_str = pytesseract.image_to_string(
         card_number_pic, config='--psm 10 --oem 3 -c tessedit_char_whitelist=0123456789')
 
