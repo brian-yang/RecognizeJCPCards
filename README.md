@@ -18,6 +18,6 @@ This project was designed to test out flat credit card scanning with OpenCV and 
 ## Python version
 1. To run the short term solution, do `python main.py <path_to_image>` in the `python/short-term/` directory
 2. To run the long term experimental solution, do `python main.py --east frozen_east_text_detection.pb --image <path_to_image> --padding 0.05` in the `python/long-term` directory
-# C++ version
+## C++ version
 1. Run `make` to compile.
 2. Then run `./main --model=frozen_east_text_detection.pb --input=<path_to_image>` in the `c++/` directory (this is for the long term solution - currently used for experimental purposes)
