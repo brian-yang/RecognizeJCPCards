@@ -16,8 +16,8 @@ This project was designed to test out flat credit card scanning with OpenCV and 
 1. Install OpenCV 3.4.3 or greater. [[For Mac](https://www.learnopencv.com/install-opencv3-on-macos/)] [[For Ubuntu 16.04](http://www.codebind.com/cpp-tutorial/install-opencv-ubuntu-cpp/)]
 # Run 
 ## Python version
-1. To run short-term.py, do `python short-term.py <path_to_image>`
-2. To run long-term.py, see the first 2 lines of the file
+1. To run the short term solution, do `python main.py <path_to_image>` in the `python/short-term/` directory
+2. To run the long term experimental solution, do `python main.py --east frozen_east_text_detection.pb --image <path_to_image> --padding 0.05` in the `python/long-term` directory
 # C++ version
 1. Run `make` to compile.
-2. Then run `./main --model=frozen_east_text_detection.pb --input=<path_to_image>`
+2. Then run `./main --model=frozen_east_text_detection.pb --input=<path_to_image>` in the `c++/` directory (this is for the long term solution - currently used for experimental purposes)
