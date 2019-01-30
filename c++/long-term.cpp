@@ -22,6 +22,7 @@ int main(int argc, char** argv)
 {
     // Parse command line arguments.
     CommandLineParser parser(argc, argv, keys);
+    // From OpenCV's examples of how to use the opencv2/dnn library with a neural network model
     parser.about("Use this script to run the long term JCPenney solution with the "
                   "EAST: An Efficient and Accurate Scene Text Detector (https://arxiv.org/abs/1704.03155v2) model");
     if (argc == 1 || parser.has("help"))
